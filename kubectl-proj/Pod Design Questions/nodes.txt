@@ -1,0 +1,2 @@
+NAME       STATUS   ROLES           AGE    VERSION
+minikube   Ready    control-plane   5d7h   v1.25.0
