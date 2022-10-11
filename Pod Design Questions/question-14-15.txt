@@ -1,0 +1,5 @@
+# 14.Get all the nodes with labels (if using minikube you would get only master node) 
+kubectl get nodes 
+
+# 15.Label the worker node nodeName=nginxnode 
+kubectl label nodes minikube nodeName=nginxnode

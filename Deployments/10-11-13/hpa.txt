@@ -1,0 +1,2 @@
+NAME     REFERENCE           TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+webapp   Deployment/webapp   <unknown>/85%   10        20        10         11m

@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-pod
+  labels:
+    name: multi-pod
+spec:
+  containers:
+  - name: alpha
+    image: nginx
+    env:
+    - name: name
+      value: "alpha"
+    command: ["echo"]
+    args: ["$(name)"]
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+  - name: beta
+    image: busybox
+    env:
+    - name: name
+      value: "beta"
+    command: ["echo", "sleep"]
+    args: ["$(name)", "4800"]
+
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
+

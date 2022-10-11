@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+  annotations:
+        imageregistry: "https://hub.docker.com/"
+spec:
+  selector:
+    matchLabels:
+      app: nginx-deploy
+  template:
+    metadata:
+      # name: annotations-nginx-deploy
+      # annotations:
+      #   imageregistry: "https://hub.docker.com/"
+      labels:
+        app: nginx-deploy
+    spec:
+      containers:
+      - name: nginx-deploy
+        image: nginx:1.16
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+
+
+# Upgrade the version of the deployment to 1:17
+# k edit deployment nginx-deploy
+# or 
+# kubectl set image deployment nginx-deploy nginx=myimage:1.17
+
+# kubectl rollout status deployment webapp 
+# changed the image version to 1:17
+# output : 'deployment.apps/nginx-deploy edited' 
+# kubectl rollout history deployment nginx-deploy
+

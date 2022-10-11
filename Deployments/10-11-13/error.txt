@@ -1,0 +1,3 @@
+NAME                      READY   STATUS             RESTARTS   AGE
+webapp-586f8fbb65-4wrwh   1/1     Running            0          64m
+webapp-7bf9c79b78-9tpfb   0/1     ImagePullBackOff   0          78s

@@ -1,0 +1,57 @@
+# 3. Verify all the pods are created with correct labels
+
+kubectl get pods
+kubectl describe pods app-dev-1-8676f6b87f-ldqzj    
+kubectl describe pods app-dev-2-d9469bc44-mtrc6  
+kubectl describe pods app-dev-3-855c9f6b69-x2cx8 
+kubectl describe pods app-prod-1-7cdfc97b87-g7lhl 
+kubectl describe pods app-prod-2-5bccdb5f48-qmgvk
+kubectl get pods -l env=prod
+kubectl get pods -l env=dev
+
+# 4. Get the pods with label env=dev 
+kubectl get pods -l env=dev
+
+# 5. Get the pods with label env=dev and also output the labels
+k get pods -l env=dev > labels-dev.txt
+
+# 6. Get the pods with label env=prod 
+kubectl get pods -l env=prod
+
+# 7. Get the pods with label env=prod and also output the labels
+k get pods -l env=prod > labels-prod.txt
+
+# 8. Get the pods with label env
+k get pods -l env
+
+# 9. Get the pods with labels env=dev and env=prod
+kubectl get pods -l 'env in (prod,dev)' 
+
+# 10. Get the pods with labels env=dev and env=prod and output the labels as well
+kubectl get pods -l 'env in (prod,dev)' > lables-both.txt
+
+11.Change the label for one of the pod to env=uat and list all the pods to verify
+kubectl get pods -l env=uat 
+kubectl get pods
+kubectl get pods -l 'env in (prod,dev,uat)'
+
+# 12.Remove the labels for the pods that we created now and verify all the labels are removed?
+
+kubectl edit pods app-dev-1
+kubectl edit pods app-dev-2
+kubectl edit pods app-dev-3
+kubectl edit pods app-prod-2
+kubectl edit pods app-prod-1
+
+remove the lablels
+
+verify :
+kubectl get pods -l 'env in (prod,dev,uat)' 
+
+# 13. Let’s add the label app=nginx for all the pods and verify (using kubectl)
+ntc how to add labels via kubectl to exsist deployment  
+k get pods -l app=nginx
+
+
+
+

@@ -1,0 +1,7 @@
+# 17.Verify the pod that it is scheduled with the node selector on the right node… fix it if it’s not behind scheduled.
+
+kubectl describe pods nginx | grep -i Node-Selectors > nodeSelector.txt
+
+#18. Verify the pod nginx that we just created has this label
+
+kubectl get pods -l name=nginx 
