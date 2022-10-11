@@ -1,9 +1,0 @@
-deployment.apps/webapp 
-REVISION  CHANGE-CAUSE
-7         <none>
-9         <none>
-10        <none>
-11        <none>
-12        <none>
-13        <none>
-

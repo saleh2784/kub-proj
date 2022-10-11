@@ -1,3 +1,0 @@
-
-key1: INFO
-key2: value2

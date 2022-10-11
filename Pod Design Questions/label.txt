@@ -1,3 +1,0 @@
-NAME                          READY   STATUS    RESTARTS   AGE
-app-prod-1-c84584df5-xkmkv    1/1     Running   0          2m7s
-app-prod-2-75d4c8d576-mjm2t   1/1     Running   0          2m7s
