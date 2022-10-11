@@ -1,0 +1,21 @@
+# 10. Create a Persistent Volume with the given specification
+# a. Volume Name: pv-analytics
+# b. Storage: 100Mi
+# c. Access modes: ReadWriteMany
+# d. Host Path: /pv/data-analytics
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-analytics
+spec:
+  hostPath:
+    path: /pv/data-analytics
+  capacity:
+    storage: 100Mi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow

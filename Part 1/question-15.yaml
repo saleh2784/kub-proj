@@ -1,0 +1,23 @@
+
+# Create a static pod on node01 called nginx-critical with image nginx.
+# Create this pod on node01 and make sure that it is recreated/restarted automatically in case of a failure.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-critical
+  labels:
+    name: nginx-critical
+spec:
+  nodeName: node-1
+  restartPolicy: OnFailure
+  containers:
+  - name: nginx-critical
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+        name: nginx-critical
+        protocol: TCP

@@ -1,0 +1,28 @@
+# 11. Create a Pod called redis-storage-yourname with image: redis:alpine with a Volume of type emptyDir that lasts for the life of the Pod. specs:.
+# a. Pod named 'redis-storage-yourname'
+# b. Pod 'redis-storage-yourname' uses Volume type of emptyDir
+# c. Pod 'redis-storage-yourname' uses volumeMount with mountPath = /data/redis
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-storage-saleh
+spec:
+  containers:
+  - image: redis:alpine
+    name: redis-storage-saleh
+    resources:
+      limits:
+        memory: 512Mi
+        cpu: "1"
+      requests:
+        memory: 256Mi
+        cpu: "0.2"
+    volumeMounts:
+    - mountPath: /data/redis
+      name: redis-storage-saleh
+  volumes:
+  - name: redis-storage-saleh
+    emptyDir: {}
+    

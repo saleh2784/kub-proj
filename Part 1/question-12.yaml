@@ -1,0 +1,43 @@
+# 12. Create this pod and attached it a persistent volume called pv-1
+# a. Make sure the PV mountPath is hostbase : /data
+
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-1
+  # annotations:
+  #   volume.beta.kubernetes.io/storage-class: "fast-io"
+spec:
+  # hostPath:
+  #   path: /data
+  resources:
+    requests:
+      storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: use-pv
+  name: use-pvspec-saleh
+spec:
+  volumes:
+    - name: pv-1
+      persistentVolumeClaim:
+        claimName: pv-1
+  containers:
+  - name: use-pv
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+    - name: pv-1
+      mountPath: /data
+status: {}

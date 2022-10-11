@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  config.txt: |-
+    # kubectl create configmap keyvalcfgmap --from-file=config.txt
+
+  key1: value1
+  key2: value2
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-10-11T08:44:29Z"
+  name: keyvalcfgmap
+  namespace: default
+  resourceVersion: "386457"
+  uid: bf092d13-d0be-478d-8976-c5f235f05026
+  

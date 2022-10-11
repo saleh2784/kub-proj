@@ -1,0 +1,26 @@
+# 1. Deploy a pod named nginx-pod using the nginx:alpine image. Name: nginx-pod-yourname Image: nginx:alpine
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-pod-saleh
+  name: nginx-pod-saleh
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-pod-saleh
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-pod-saleh
+    spec:
+      containers:
+      - image: nginx:alpine
+        name: nginx-pod-saleh
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+status: {}

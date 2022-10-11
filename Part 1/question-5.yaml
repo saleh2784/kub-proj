@@ -1,0 +1,11 @@
+# 5. Create a service messaging-service to expose the messaging application within the cluster on port 6379.
+# a. Use imperative commands - kubectl
+# b. Service: messaging-service
+# c. Port: 6379
+# d. Type: ClusterIp
+# e. Use the right labels
+
+kubectl expose deployment messaging --port 6379 --target-port 6379 --type ClusterIP --name messaging-service -l tier=msg
+
+kubectl expose deployment messaging --port 6379 --type ClusterIP --name messaging-service -l tier=msg
+

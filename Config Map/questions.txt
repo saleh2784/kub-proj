@@ -1,0 +1,9 @@
+CONFIG MAP:
+# 1. Create a file called config.txt with two values
+# key1=value1 and key2=value2 
+# and verify the file
+
+
+kubectl create configmap keyvalcfgmap --from-file=config.txt
+
+

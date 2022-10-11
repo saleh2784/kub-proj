@@ -1,0 +1,45 @@
+# Create a pod called multi-pod with two containers.
+# Container 1, name: alpha, image: nginx
+# Container 2: beta, image: busybox, command sleep 4800.
+# a. Environment Variables:
+# i. container 1:
+# ii. name: alpha
+# iii. Container 2:
+# iv. name: beta
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multi-pod
+  labels:
+    name: multi-pod
+spec:
+  containers:
+  - name: alpha
+    image: nginx
+    env:
+    - name: name
+      value: "alpha"
+    command: ["echo"]
+    args: ["$(name)"]
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
+  - name: beta
+    image: busybox
+    env:
+    - name: name
+      value: "beta"
+    command: ["echo", "sleep"]
+    args: ["$(name)", "4800"]
+
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+
+

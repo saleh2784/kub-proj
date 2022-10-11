@@ -1,0 +1,3 @@
+# 4. Get the list of nodes in JSON format and store it in a file at /tmp/nodes-yourname
+
+kubectl get nodes -o=jsonpath="{.items[*]['metadata.name']}" > /tmp/nodes-saleh

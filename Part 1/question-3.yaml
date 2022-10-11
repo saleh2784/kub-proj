@@ -1,0 +1,6 @@
+#3. Create a namespace named apx-x998-yourname
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: apx-x998-saleh

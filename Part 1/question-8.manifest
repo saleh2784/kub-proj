@@ -1,0 +1,33 @@
+# 8. Create a static pod named static-busybox on the master node that uses the busybox image and the command sleep 1000
+#a. Name: static-busybox
+#b. Image: busybox
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: static-busybox
+  name: static-busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: static-busybox
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: static-busybox
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        args:
+        - sleep
+        - "1000"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+status: {}

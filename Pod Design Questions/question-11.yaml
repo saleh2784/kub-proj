@@ -1,0 +1,107 @@
+# 11.Change the label for one of the pod to env=uat and list all the pods to verify
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-prod-1
+spec:
+  selector:
+    matchLabels:
+      env: uat
+  template:
+    metadata:
+      labels:
+        env: uat
+    spec:
+      containers:
+      - name: app-prod-1
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-prod-2
+spec:
+  selector:
+    matchLabels:
+      env: prod
+  template:
+    metadata:
+      labels:
+        env: prod 
+    spec:
+      containers:
+      - name: app-prod-2
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-dev-1
+spec:
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      labels:
+        env: dev 
+    spec:
+      containers:
+      - name: app-dev-1
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-dev-2
+spec:
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      labels:
+        env: dev 
+    spec:
+      containers:
+      - name: app-dev-2
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-dev-3
+spec:
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      labels:
+        env: dev 
+    spec:
+      containers:
+      - name: app-dev-3
+        image: nginx
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
