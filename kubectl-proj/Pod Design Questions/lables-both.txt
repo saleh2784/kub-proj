@@ -1,6 +1,0 @@
-NAME                          READY   STATUS    RESTARTS   AGE
-app-dev-1-7876fcd67f-2gwk5    1/1     Running   0          17m
-app-dev-2-5dbd4c6d-ltbvw      1/1     Running   0          17m
-app-dev-3-5c58475ddf-qwrr8    1/1     Running   0          17m
-app-prod-1-c84584df5-xkmkv    1/1     Running   0          17m
-app-prod-2-75d4c8d576-mjm2t   1/1     Running   0          17m

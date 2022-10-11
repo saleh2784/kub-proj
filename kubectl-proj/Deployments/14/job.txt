@@ -1,2 +1,0 @@
-NAME        COMPLETIONS   DURATION   AGE
-hello-job   10/10         62s        3m27s

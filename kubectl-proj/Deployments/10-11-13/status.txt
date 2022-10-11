@@ -1,2 +1,0 @@
-NAME                    READY   STATUS    RESTARTS   AGE
-webapp-859df4d4-mmzgz   1/1     Running   0          23s

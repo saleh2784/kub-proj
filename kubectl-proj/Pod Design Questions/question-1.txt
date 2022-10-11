@@ -1,4 +1,0 @@
-# Type the command for:
-# Get pods with label information
-
-# kubectl get pods -l env=prod

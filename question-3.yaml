@@ -1,5 +1,0 @@
-## create name space
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: apx-x998-saleh

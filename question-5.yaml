@@ -1,4 +1,0 @@
-kubectl expose deployment messaging --port 6379 --target-port 6379 --type ClusterIP --name messaging-service
-
-kubectl expose deployment messaging --port 6379 --type ClusterIP --name messaging-service
-
